@@ -1,4 +1,6 @@
-import { getTranslations } from "next-intl/server";
+"use client";
+
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { cn } from "@/lib/utils";
 
@@ -11,11 +13,8 @@ function formatCategory(category: string) {
   return category.replace("'s", "'s ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-export async function ProductBreadcrumb({
-  category,
-  title,
-}: ProductBreadcrumbProps) {
-  const t = await getTranslations("products");
+export function ProductBreadcrumb({ category, title }: ProductBreadcrumbProps) {
+  const t = useTranslations("products");
 
   return (
     <nav aria-label="Breadcrumb" className="text-sm text-muted-foreground">

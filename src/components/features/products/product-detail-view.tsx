@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 import { ProductBreadcrumb } from "@/components/features/products/product-breadcrumb";
 import { ProductDetailClient } from "@/components/features/products/product-detail-client";
 import { ProductRating } from "@/components/features/products/product-rating";
@@ -14,8 +16,8 @@ function formatCategory(category: string) {
   return category.replace("'s", "'s ").replace(/\b\w/g, (c) => c.toUpperCase());
 }
 
-export async function ProductDetailView({ product }: ProductDetailViewProps) {
-  const t = await getTranslations("products");
+export function ProductDetailView({ product }: ProductDetailViewProps) {
+  const t = useTranslations("products");
 
   return (
     <article className="space-y-8">
@@ -59,7 +61,9 @@ export async function ProductDetailView({ product }: ProductDetailViewProps) {
             <dl className="grid gap-4 text-sm">
               <div className="flex justify-between gap-4">
                 <dt className="text-muted-foreground">{t("detailCategory")}</dt>
-                <dd className="text-right capitalize">{formatCategory(product.category)}</dd>
+                <dd className="text-right capitalize">
+                  {formatCategory(product.category)}
+                </dd>
               </div>
               <div className="flex justify-between gap-4">
                 <dt className="text-muted-foreground">{t("detailShipping")}</dt>
