@@ -147,7 +147,8 @@
     "password": "Password",
     "hint": "Use any Fake Store API user, e.g. johnd / m38rmF$",
     "loginSuccess": "Welcome back.",
-    "loginError": "Login failed. Check your credentials."
+    "loginError": "Login failed. Check your credentials.",
+    "redirecting": "Redirecting to sign in…"
   },
   "profile": {
     "title": "My account",
@@ -165,11 +166,39 @@
     "uploadPhoto": "Upload a new photo"
   },
   "admin": {
-    "title": "Admin",
+    "title": "Admin dashboard",
+    "eyebrow": "Back office",
+    "subtitle": "Monitor catalog data and manage local product overrides for the portfolio demo.",
+    "catalogSize": "Catalog items",
+    "catalogHint": "Fashion products from Fake Store API",
+    "localOverrides": "Local overrides",
+    "localHint": "Products created or edited in this browser",
+    "productsHint": "Add, review, or remove locally stored products.",
+    "manageProducts": "Manage products",
+    "backToDashboard": "Dashboard",
     "products": "Products",
     "addProduct": "Add product",
     "editProduct": "Edit product",
-    "localNote": "Admin CRUD uses local storage — Fake Store API is read-only."
+    "deleteProduct": "Delete",
+    "localNote": "Admin CRUD uses local storage — Fake Store API is read-only.",
+    "fieldTitle": "Title",
+    "fieldTitlePlaceholder": "Product name",
+    "fieldPrice": "Price",
+    "fieldCategory": "Category",
+    "fieldImage": "Image URL",
+    "fieldImagePlaceholder": "https://fakestoreapi.com/…",
+    "fieldDescription": "Description",
+    "fieldDescriptionPlaceholder": "Short product description",
+    "colProduct": "Product",
+    "colPrice": "Price",
+    "colSource": "Source",
+    "colActions": "Actions",
+    "sourceLocal": "Local",
+    "sourceApi": "API",
+    "noProducts": "No products loaded yet.",
+    "titleRequired": "Title is required.",
+    "productSaved": "Product saved.",
+    "productRemoved": "Product removed."
   },
   "theme": {
     "light": "Light",

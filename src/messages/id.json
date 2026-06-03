@@ -147,7 +147,8 @@
     "password": "Kata sandi",
     "hint": "Gunakan user Fake Store API, contoh: johnd / m38rmF$",
     "loginSuccess": "Selamat datang kembali.",
-    "loginError": "Gagal masuk. Periksa kredensial Anda."
+    "loginError": "Gagal masuk. Periksa kredensial Anda.",
+    "redirecting": "Mengalihkan ke halaman masuk…"
   },
   "profile": {
     "title": "Akun saya",
@@ -165,11 +166,39 @@
     "uploadPhoto": "Unggah foto baru"
   },
   "admin": {
-    "title": "Admin",
+    "title": "Dashboard admin",
+    "eyebrow": "Back office",
+    "subtitle": "Pantau data katalog dan kelola override produk lokal untuk demo portfolio.",
+    "catalogSize": "Item katalog",
+    "catalogHint": "Produk fashion dari Fake Store API",
+    "localOverrides": "Override lokal",
+    "localHint": "Produk dibuat atau diubah di browser ini",
+    "productsHint": "Tambah, tinjau, atau hapus produk tersimpan lokal.",
+    "manageProducts": "Kelola produk",
+    "backToDashboard": "Dashboard",
     "products": "Produk",
     "addProduct": "Tambah produk",
     "editProduct": "Ubah produk",
-    "localNote": "CRUD admin memakai local storage — Fake Store API hanya baca."
+    "deleteProduct": "Hapus",
+    "localNote": "CRUD admin memakai local storage — Fake Store API hanya baca.",
+    "fieldTitle": "Judul",
+    "fieldTitlePlaceholder": "Nama produk",
+    "fieldPrice": "Harga",
+    "fieldCategory": "Kategori",
+    "fieldImage": "URL gambar",
+    "fieldImagePlaceholder": "https://fakestoreapi.com/…",
+    "fieldDescription": "Deskripsi",
+    "fieldDescriptionPlaceholder": "Deskripsi produk singkat",
+    "colProduct": "Produk",
+    "colPrice": "Harga",
+    "colSource": "Sumber",
+    "colActions": "Aksi",
+    "sourceLocal": "Lokal",
+    "sourceApi": "API",
+    "noProducts": "Belum ada produk dimuat.",
+    "titleRequired": "Judul wajib diisi.",
+    "productSaved": "Produk disimpan.",
+    "productRemoved": "Produk dihapus."
   },
   "theme": {
     "light": "Terang",

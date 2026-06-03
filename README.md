@@ -1,16 +1,16 @@
-# LuxeThread — E-Commerce Portfolio (Frontend)
+# VELDT — E-Commerce Portfolio (Frontend)
 
-Fashion e-commerce frontend built to demonstrate **UI/UX**, **state management**, **responsive layout**, **API integration**, **i18n**, and **accessibility** — visual design is applied in a later phase.
+Premium fashion e-commerce frontend showcasing **UI/UX**, **state management**, **responsive layout**, **API integration**, **i18n**, and **accessibility**.
 
 ## Tech stack
 
 - **Next.js 16** (App Router) + **TypeScript**
 - **Tailwind CSS v4** + **shadcn/ui**
-- **next-intl** — English / Indonesian toggle
+- **next-intl** — English / Indonesian
 - **TanStack Query** — Fake Store API + loading/error/retry
 - **Zustand** — cart, auth, profile overrides, theme
 - **React Hook Form** + **Zod**
-- **Framer Motion** — ready for design phase
+- **Framer Motion** — scroll reveals & micro-interactions
 
 ## Getting started
 
@@ -44,18 +44,13 @@ Open [http://localhost:3000](http://localhost:3000) — middleware redirects to 
 
 Remote: [github.com/febrianrachmat/e-commerce](https://github.com/febrianrachmat/e-commerce.git)
 
-```bash
-git remote add origin https://github.com/febrianrachmat/e-commerce.git
-git push -u origin main
-```
-
-## Current status
+## Project status
 
 **Phase 1 — Architecture** ✅  
-Routes, API layer, stores, bilingual shell, admin local CRUD, profile edit with photo (client-side).
+Routes, API layer, stores, bilingual shell, admin local CRUD, profile edit with photo.
 
-**Phase 2 — Design** (waiting for your references)  
-Brand, typography, motion, responsive polish.
+**Phase 2 — Design (VELDT)** ✅  
+Editorial fashion brand, homepage, shop, cart/checkout, auth/profile, admin polish.
 
 ## License
 
