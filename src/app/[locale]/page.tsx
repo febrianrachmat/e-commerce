@@ -4,7 +4,7 @@ import {
   getProducts,
   getProductsByCategory,
 } from "@/lib/api/products";
-import { HomeHero } from "@/components/features/home/home-hero";
+import { HomeHero, pickHeroSlides } from "@/components/features/home/home-hero";
 import {
   CategoryTiles,
   type CategoryTile,
@@ -36,12 +36,22 @@ export default async function HomePage({ params }: PageProps) {
       getProductsByCategory("jewelery"),
     ]);
 
-  const heroProduct =
-    womenProducts[0] ?? menProducts[0] ?? featuredProducts[0];
-  const editorialProduct =
-    menProducts[1] ?? jewelryProducts[0] ?? featuredProducts[1] ?? heroProduct;
+  const heroSlides = pickHeroSlides([
+    womenProducts[0],
+    menProducts[0],
+    jewelryProducts[0],
+    womenProducts[2],
+    menProducts[1],
+    featuredProducts[0],
+  ]);
 
-  if (!heroProduct) {
+  const editorialProduct =
+    menProducts[1] ??
+    jewelryProducts[0] ??
+    featuredProducts[1] ??
+    womenProducts[0];
+
+  if (heroSlides.length === 0) {
     return (
       <section className="py-20 text-center text-muted-foreground">
         <p>Unable to load catalog.</p>
@@ -70,7 +80,7 @@ export default async function HomePage({ params }: PageProps) {
 
   return (
     <div className="space-y-16 pb-4 md:space-y-24 md:pb-8">
-      <HomeHero product={heroProduct} />
+      <HomeHero slides={heroSlides} />
       <CategoryTiles tiles={tiles} />
       <FeaturedProducts products={featuredProducts} />
       <EditorialBanner product={editorialProduct} />
