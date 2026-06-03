@@ -1,0 +1,83 @@
+{
+  "common": {
+    "brand": "LuxeThread",
+    "loading": "Loading…",
+    "error": "Something went wrong",
+    "retry": "Try again",
+    "empty": "Nothing here yet",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "edit": "Edit",
+    "search": "Search products",
+    "skipToContent": "Skip to main content"
+  },
+  "nav": {
+    "home": "Home",
+    "shop": "Shop",
+    "cart": "Cart",
+    "profile": "Profile",
+    "login": "Login",
+    "logout": "Logout",
+    "admin": "Admin",
+    "language": "Language"
+  },
+  "home": {
+    "title": "Fashion portfolio storefront",
+    "subtitle": "Architecture-first build — visual design comes later.",
+    "ctaShop": "Browse collection"
+  },
+  "products": {
+    "title": "Shop",
+    "filters": "Filters",
+    "category": "Category",
+    "sort": "Sort",
+    "sortPriceAsc": "Price: low to high",
+    "sortPriceDesc": "Price: high to low",
+    "sortRating": "Top rated",
+    "addToCart": "Add to cart",
+    "notFound": "Product not found"
+  },
+  "cart": {
+    "title": "Cart",
+    "empty": "Your cart is empty",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "shipping": "Shipping",
+    "payment": "Payment (mock)",
+    "placeOrder": "Place order",
+    "successTitle": "Order placed",
+    "successMessage": "This is a mock checkout for portfolio demonstration."
+  },
+  "auth": {
+    "loginTitle": "Sign in",
+    "username": "Username",
+    "password": "Password",
+    "hint": "Use any Fake Store API user, e.g. johnd / m38rmF$"
+  },
+  "profile": {
+    "title": "Profile",
+    "editTitle": "Edit profile",
+    "firstname": "First name",
+    "lastname": "Last name",
+    "email": "Email",
+    "phone": "Phone",
+    "photo": "Profile photo",
+    "uploadPhoto": "Upload photo"
+  },
+  "admin": {
+    "title": "Admin",
+    "products": "Products",
+    "addProduct": "Add product",
+    "editProduct": "Edit product",
+    "localNote": "Admin CRUD uses local storage — Fake Store API is read-only."
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}

@@ -1,0 +1,83 @@
+{
+  "common": {
+    "brand": "LuxeThread",
+    "loading": "Memuat…",
+    "error": "Terjadi kesalahan",
+    "retry": "Coba lagi",
+    "empty": "Belum ada data",
+    "save": "Simpan",
+    "cancel": "Batal",
+    "delete": "Hapus",
+    "edit": "Ubah",
+    "search": "Cari produk",
+    "skipToContent": "Lewati ke konten utama"
+  },
+  "nav": {
+    "home": "Beranda",
+    "shop": "Toko",
+    "cart": "Keranjang",
+    "profile": "Profil",
+    "login": "Masuk",
+    "logout": "Keluar",
+    "admin": "Admin",
+    "language": "Bahasa"
+  },
+  "home": {
+    "title": "Toko fashion portfolio",
+    "subtitle": "Pembangunan berfokus arsitektur — desain visual menyusul.",
+    "ctaShop": "Lihat koleksi"
+  },
+  "products": {
+    "title": "Toko",
+    "filters": "Filter",
+    "category": "Kategori",
+    "sort": "Urutkan",
+    "sortPriceAsc": "Harga: rendah ke tinggi",
+    "sortPriceDesc": "Harga: tinggi ke rendah",
+    "sortRating": "Rating tertinggi",
+    "addToCart": "Tambah ke keranjang",
+    "notFound": "Produk tidak ditemukan"
+  },
+  "cart": {
+    "title": "Keranjang",
+    "empty": "Keranjang Anda kosong",
+    "subtotal": "Subtotal",
+    "checkout": "Checkout"
+  },
+  "checkout": {
+    "title": "Checkout",
+    "shipping": "Pengiriman",
+    "payment": "Pembayaran (mock)",
+    "placeOrder": "Buat pesanan",
+    "successTitle": "Pesanan berhasil",
+    "successMessage": "Ini adalah checkout mock untuk demonstrasi portfolio."
+  },
+  "auth": {
+    "loginTitle": "Masuk",
+    "username": "Username",
+    "password": "Kata sandi",
+    "hint": "Gunakan user Fake Store API, contoh: johnd / m38rmF$"
+  },
+  "profile": {
+    "title": "Profil",
+    "editTitle": "Ubah profil",
+    "firstname": "Nama depan",
+    "lastname": "Nama belakang",
+    "email": "Email",
+    "phone": "Telepon",
+    "photo": "Foto profil",
+    "uploadPhoto": "Unggah foto"
+  },
+  "admin": {
+    "title": "Admin",
+    "products": "Produk",
+    "addProduct": "Tambah produk",
+    "editProduct": "Ubah produk",
+    "localNote": "CRUD admin memakai local storage — Fake Store API hanya baca."
+  },
+  "theme": {
+    "light": "Terang",
+    "dark": "Gelap",
+    "system": "Sistem"
+  }
+}
