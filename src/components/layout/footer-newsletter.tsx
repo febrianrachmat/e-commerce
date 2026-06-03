@@ -5,8 +5,17 @@ import { useTranslations } from "next-intl";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { toast } from "sonner";
+import { cn } from "@/lib/utils";
 
-export function FooterNewsletter() {
+type FooterNewsletterProps = {
+  showHeader?: boolean;
+  className?: string;
+};
+
+export function FooterNewsletter({
+  showHeader = true,
+  className,
+}: FooterNewsletterProps) {
   const t = useTranslations("footer.newsletter");
   const [email, setEmail] = useState("");
 
@@ -18,11 +27,15 @@ export function FooterNewsletter() {
   }
 
   return (
-    <div className="space-y-4">
-      <h2 className="section-eyebrow text-foreground">{t("title")}</h2>
-      <p className="text-sm leading-relaxed text-muted-foreground">
-        {t("description")}
-      </p>
+    <div className={cn("space-y-4", className)}>
+      {showHeader ? (
+        <>
+          <h2 className="section-eyebrow text-foreground">{t("title")}</h2>
+          <p className="text-sm leading-relaxed text-muted-foreground">
+            {t("description")}
+          </p>
+        </>
+      ) : null}
       <form onSubmit={handleSubmit} className="flex flex-col gap-2 sm:flex-row">
         <Input
           type="email"

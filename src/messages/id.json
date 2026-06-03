@@ -59,9 +59,25 @@
     "copyright": "© {year} {brand}. Hak cipta dilindungi."
   },
   "home": {
-    "title": "Toko fashion portfolio",
-    "subtitle": "Pembangunan berfokus arsitektur — desain visual menyusul.",
-    "ctaShop": "Lihat koleksi"
+    "eyebrow": "Musim baru",
+    "title": "Gaya yang terbentuk dari ruang terbuka",
+    "subtitle": "Tailoring editorial dan essentials santai — dikurasi dari katalog fashion untuk elevasi sehari-hari.",
+    "ctaWomen": "Belanja wanita",
+    "ctaMen": "Belanja pria",
+    "categoriesEyebrow": "Koleksi",
+    "categoriesTitle": "Belanja per kategori",
+    "shopCategory": "Belanja sekarang",
+    "featuredEyebrow": "Kurasi",
+    "featuredTitle": "Produk pilihan",
+    "featuredSubtitle": "Style rating tertinggi dari edit VELDT — tambah ke keranjang dalam satu klik.",
+    "viewAll": "Lihat semua",
+    "editorialEyebrow": "The edit",
+    "editorialTitle": "Percaya diri yang tenang, dibuat untuk bertahan",
+    "editorialBody": "Dari layer terstruktur hingga aksesori halus — temukan pieces untuk perpindahan antara kota dan pantai.",
+    "editorialCta": "Jelajahi koleksi",
+    "newsletterEyebrow": "Newsletter",
+    "newsletterTitle": "Gabung daftar VELDT",
+    "newsletterSubtitle": "Akses awal drop, catatan styling, dan update portfolio."
   },
   "products": {
     "title": "Toko",

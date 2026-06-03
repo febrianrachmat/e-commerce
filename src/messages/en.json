@@ -59,9 +59,25 @@
     "copyright": "© {year} {brand}. All rights reserved."
   },
   "home": {
-    "title": "Fashion portfolio storefront",
-    "subtitle": "Architecture-first build — visual design comes later.",
-    "ctaShop": "Browse collection"
+    "eyebrow": "New season",
+    "title": "Style shaped by open landscapes",
+    "subtitle": "Editorial tailoring and relaxed essentials — curated from our fashion catalog for everyday elevation.",
+    "ctaWomen": "Shop women's",
+    "ctaMen": "Shop men's",
+    "categoriesEyebrow": "Collections",
+    "categoriesTitle": "Shop by category",
+    "shopCategory": "Shop now",
+    "featuredEyebrow": "Curated",
+    "featuredTitle": "Featured pieces",
+    "featuredSubtitle": "Top-rated styles from the VELDT edit — add to cart in one click.",
+    "viewAll": "View all",
+    "editorialEyebrow": "The edit",
+    "editorialTitle": "Quiet confidence, built to last",
+    "editorialBody": "From structured layers to refined accessories — discover pieces designed for movement between city and coast.",
+    "editorialCta": "Explore collection",
+    "newsletterEyebrow": "Newsletter",
+    "newsletterTitle": "Join the VELDT list",
+    "newsletterSubtitle": "Early access to drops, styling notes, and portfolio updates."
   },
   "products": {
     "title": "Shop",
