@@ -40,6 +40,7 @@ export async function apiClient<T>(
       "Content-Type": "application/json",
       ...headers,
     },
+    next: { revalidate: 300, ...init.next },
   });
 
   if (!response.ok) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useMemo } from "react";
 import { Package, Database } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { LinkButton } from "@/components/ui/link-button";
@@ -10,13 +10,12 @@ import { adminProductStore } from "@/lib/admin/product-store";
 export function AdminDashboard() {
   const t = useTranslations("admin");
   const productsQuery = useProductsQuery();
-  const [localCount, setLocalCount] = useState(0);
 
-  useEffect(() => {
-    if (productsQuery.data) {
-      adminProductStore.seedFromApi(productsQuery.data);
-      setLocalCount(adminProductStore.list().filter((p) => p.isLocal).length);
-    }
+  const localCount = useMemo(() => {
+    if (!productsQuery.data) return 0;
+    return adminProductStore
+      .seedFromApi(productsQuery.data)
+      .filter((p) => p.isLocal).length;
   }, [productsQuery.data]);
 
   const catalogCount = productsQuery.data?.length ?? 0;

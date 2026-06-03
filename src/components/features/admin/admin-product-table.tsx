@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { useTranslations } from "next-intl";
 import { toast } from "sonner";
 import { Badge } from "@/components/ui/badge";
@@ -28,6 +28,7 @@ export function AdminProductTable() {
   const tNav = useTranslations("nav");
   const productsQuery = useProductsQuery();
   const [rows, setRows] = useState<AdminProduct[]>([]);
+  const [seededCatalog, setSeededCatalog] = useState(productsQuery.data);
   const [draft, setDraft] = useState({
     title: "",
     price: 0,
@@ -36,17 +37,18 @@ export function AdminProductTable() {
     description: "",
   });
 
+  if (productsQuery.data !== seededCatalog) {
+    setSeededCatalog(productsQuery.data);
+    if (productsQuery.data) {
+      setRows(adminProductStore.seedFromApi(productsQuery.data));
+    }
+  }
+
   const categoryLabels: Record<string, string> = {
     "women's clothing": tNav("women"),
     "men's clothing": tNav("men"),
     jewelery: tNav("jewelry"),
   };
-
-  useEffect(() => {
-    if (productsQuery.data) {
-      setRows(adminProductStore.seedFromApi(productsQuery.data));
-    }
-  }, [productsQuery.data]);
 
   const refresh = () => setRows(adminProductStore.list());
 

@@ -28,13 +28,22 @@ export default async function HomePage({ params }: PageProps) {
   setRequestLocale(locale);
   const tNav = await getTranslations("nav");
 
-  const [featuredProducts, womenProducts, menProducts, jewelryProducts] =
-    await Promise.all([
-      getProducts({ sort: "rating", limit: 4 }),
-      getProductsByCategory("women's clothing"),
-      getProductsByCategory("men's clothing"),
-      getProductsByCategory("jewelery"),
-    ]);
+  let featuredProducts: Awaited<ReturnType<typeof getProducts>> = [];
+  let womenProducts: Awaited<ReturnType<typeof getProductsByCategory>> = [];
+  let menProducts: Awaited<ReturnType<typeof getProductsByCategory>> = [];
+  let jewelryProducts: Awaited<ReturnType<typeof getProductsByCategory>> = [];
+
+  try {
+    [featuredProducts, womenProducts, menProducts, jewelryProducts] =
+      await Promise.all([
+        getProducts({ sort: "rating", limit: 4 }),
+        getProductsByCategory("women's clothing"),
+        getProductsByCategory("men's clothing"),
+        getProductsByCategory("jewelery"),
+      ]);
+  } catch {
+    // Allow build/deploy when Fake Store API is unreachable during SSG.
+  }
 
   const heroSlides = pickHeroSlides([
     womenProducts[0],

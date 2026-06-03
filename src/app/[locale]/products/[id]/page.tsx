@@ -1,6 +1,7 @@
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { ProductDetailView } from "@/components/features/products/product-detail-view";
 import { getProductById } from "@/lib/api/products";
+import type { Product } from "@/types/product";
 import { LinkButton } from "@/components/ui/link-button";
 
 type PageProps = {
@@ -24,10 +25,14 @@ export default async function ProductDetailPage({ params }: PageProps) {
     );
   }
 
+  let product: Product | null = null;
   try {
-    const product = await getProductById(productId);
-    return <ProductDetailView product={product} />;
+    product = await getProductById(productId);
   } catch {
+    product = null;
+  }
+
+  if (!product) {
     return (
       <section className="space-y-4 py-16 text-center">
         <p role="alert">{t("notFound")}</p>
@@ -37,4 +42,6 @@ export default async function ProductDetailPage({ params }: PageProps) {
       </section>
     );
   }
+
+  return <ProductDetailView product={product} />;
 }

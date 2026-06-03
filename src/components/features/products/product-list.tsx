@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
@@ -24,15 +24,10 @@ export function ProductList() {
   const tNav = useTranslations("nav");
   const router = useRouter();
   const searchParams = useSearchParams();
-  const initialCategory = searchParams.get("category") ?? undefined;
+  const category = searchParams.get("category") ?? undefined;
 
   const [search, setSearch] = useState("");
-  const [category, setCategory] = useState<string | undefined>(initialCategory);
   const [sort, setSort] = useState<ProductFilters["sort"]>();
-
-  useEffect(() => {
-    setCategory(initialCategory);
-  }, [initialCategory]);
 
   const filters = useMemo<ProductFilters>(
     () => ({ search: search || undefined, category, sort }),
@@ -43,7 +38,6 @@ export function ProductList() {
   const categoriesQuery = useCategoriesQuery();
 
   function updateCategory(next?: string) {
-    setCategory(next);
     const href = next
       ? `/products?category=${encodeURIComponent(next)}`
       : "/products";
