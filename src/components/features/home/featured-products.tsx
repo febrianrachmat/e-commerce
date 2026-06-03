@@ -1,5 +1,7 @@
+"use client";
+
 import { ArrowUpRight } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { FullBleed } from "@/components/layout/full-bleed";
 import { MotionReveal } from "@/components/common/motion-reveal";
@@ -10,8 +12,8 @@ type FeaturedProductsProps = {
   products: Product[];
 };
 
-export async function FeaturedProducts({ products }: FeaturedProductsProps) {
-  const t = await getTranslations("home");
+export function FeaturedProducts({ products }: FeaturedProductsProps) {
+  const t = useTranslations("home");
 
   if (products.length === 0) return null;
 

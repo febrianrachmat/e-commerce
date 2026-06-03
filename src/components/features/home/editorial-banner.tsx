@@ -1,6 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
-import { getTranslations } from "next-intl/server";
+import { useTranslations } from "next-intl";
 import { Link } from "@/i18n/navigation";
 import { LinkButton } from "@/components/ui/link-button";
 import { FullBleed } from "@/components/layout/full-bleed";
@@ -11,8 +13,8 @@ type EditorialBannerProps = {
   product: Product;
 };
 
-export async function EditorialBanner({ product }: EditorialBannerProps) {
-  const t = await getTranslations("home");
+export function EditorialBanner({ product }: EditorialBannerProps) {
+  const t = useTranslations("home");
 
   return (
     <FullBleed>

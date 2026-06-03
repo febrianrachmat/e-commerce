@@ -1,4 +1,6 @@
-import { getTranslations } from "next-intl/server";
+"use client";
+
+import { useTranslations } from "next-intl";
 import { FullBleed } from "@/components/layout/full-bleed";
 import { MotionReveal } from "@/components/common/motion-reveal";
 import { CategoryTilesShowcase } from "@/components/features/home/category-tiles-showcase";
@@ -13,8 +15,8 @@ type CategoryTilesProps = {
   tiles: CategoryTile[];
 };
 
-export async function CategoryTiles({ tiles }: CategoryTilesProps) {
-  const t = await getTranslations("home");
+export function CategoryTiles({ tiles }: CategoryTilesProps) {
+  const t = useTranslations("home");
 
   if (tiles.length === 0) return null;
 

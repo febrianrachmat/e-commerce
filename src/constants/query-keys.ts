@@ -5,6 +5,7 @@ export const queryKeys = {
       ["products", "list", filters] as const,
     detail: (id: number) => ["products", "detail", id] as const,
     categories: ["products", "categories"] as const,
+    homeCatalog: ["products", "home-catalog"] as const,
   },
   users: {
     detail: (id: number) => ["users", "detail", id] as const,

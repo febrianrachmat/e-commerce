@@ -1,10 +1,12 @@
-import { getTranslations } from "next-intl/server";
+"use client";
+
+import { useTranslations } from "next-intl";
 import { FooterNewsletter } from "@/components/layout/footer-newsletter";
 import { FullBleed } from "@/components/layout/full-bleed";
 import { MotionReveal } from "@/components/common/motion-reveal";
 
-export async function HomeNewsletterStrip() {
-  const t = await getTranslations("home");
+export function HomeNewsletterStrip() {
+  const t = useTranslations("home");
 
   return (
     <FullBleed>
