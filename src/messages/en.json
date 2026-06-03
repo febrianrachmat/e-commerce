@@ -105,34 +105,64 @@
     "detailReturnsValue": "Free within 30 days"
   },
   "cart": {
-    "title": "Cart",
-    "empty": "Your cart is empty",
+    "title": "Shopping bag",
+    "eyebrow": "Your selection",
+    "subtitle": "Review items before checkout — shipping is complimentary on orders over $75.",
+    "empty": "Your bag is waiting for its first piece.",
+    "emptyTitle": "Your cart is empty",
+    "continueShopping": "Continue shopping",
+    "quantity": "Quantity",
+    "remove": "Remove",
     "subtotal": "Subtotal",
-    "checkout": "Checkout"
+    "shipping": "Shipping",
+    "shippingFree": "Complimentary",
+    "total": "Total",
+    "orderSummary": "Order summary",
+    "summaryNote": "Taxes calculated at checkout (mock).",
+    "checkout": "Proceed to checkout"
   },
   "checkout": {
     "title": "Checkout",
-    "shipping": "Shipping",
+    "eyebrow": "Secure checkout",
+    "subtitle": "Complete your shipping details — payment is simulated for this portfolio demo.",
+    "shipping": "Shipping details",
+    "fullName": "Full name",
+    "address": "Address",
+    "city": "City",
+    "zipcode": "Zip code",
+    "paymentTitle": "Payment",
     "payment": "Payment (mock)",
+    "paymentPlaceholder": "Card number — disabled in demo",
     "placeOrder": "Place order",
+    "successEyebrow": "Confirmed",
     "successTitle": "Order placed",
-    "successMessage": "This is a mock checkout for portfolio demonstration."
+    "successMessage": "Thank you — this is a mock checkout for portfolio demonstration.",
+    "successShop": "Continue shopping",
+    "successHome": "Back to home"
   },
   "auth": {
     "loginTitle": "Sign in",
+    "subtitle": "Access your account to manage profile and orders.",
     "username": "Username",
     "password": "Password",
-    "hint": "Use any Fake Store API user, e.g. johnd / m38rmF$"
+    "hint": "Use any Fake Store API user, e.g. johnd / m38rmF$",
+    "loginSuccess": "Welcome back.",
+    "loginError": "Login failed. Check your credentials."
   },
   "profile": {
-    "title": "Profile",
-    "editTitle": "Edit profile",
+    "title": "My account",
+    "eyebrow": "Account",
+    "subtitle": "Update your profile details and photo — changes are saved locally in this demo.",
+    "editTitle": "Personal details",
+    "saveChanges": "Save changes",
+    "saved": "Profile saved.",
+    "photoUpdated": "Photo updated.",
     "firstname": "First name",
     "lastname": "Last name",
     "email": "Email",
     "phone": "Phone",
     "photo": "Profile photo",
-    "uploadPhoto": "Upload photo"
+    "uploadPhoto": "Upload a new photo"
   },
   "admin": {
     "title": "Admin",

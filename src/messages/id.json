@@ -105,34 +105,64 @@
     "detailReturnsValue": "Gratis dalam 30 hari"
   },
   "cart": {
-    "title": "Keranjang",
-    "empty": "Keranjang Anda kosong",
+    "title": "Keranjang belanja",
+    "eyebrow": "Pilihan Anda",
+    "subtitle": "Tinjau item sebelum checkout — gratis ongkir untuk pesanan di atas $75.",
+    "empty": "Keranjang menunggu item pertamanya.",
+    "emptyTitle": "Keranjang kosong",
+    "continueShopping": "Lanjut belanja",
+    "quantity": "Jumlah",
+    "remove": "Hapus",
     "subtotal": "Subtotal",
-    "checkout": "Checkout"
+    "shipping": "Pengiriman",
+    "shippingFree": "Gratis",
+    "total": "Total",
+    "orderSummary": "Ringkasan pesanan",
+    "summaryNote": "Pajak dihitung saat checkout (mock).",
+    "checkout": "Lanjut ke checkout"
   },
   "checkout": {
     "title": "Checkout",
-    "shipping": "Pengiriman",
+    "eyebrow": "Checkout aman",
+    "subtitle": "Lengkapi detail pengiriman — pembayaran disimulasikan untuk demo portfolio.",
+    "shipping": "Detail pengiriman",
+    "fullName": "Nama lengkap",
+    "address": "Alamat",
+    "city": "Kota",
+    "zipcode": "Kode pos",
+    "paymentTitle": "Pembayaran",
     "payment": "Pembayaran (mock)",
+    "paymentPlaceholder": "Nomor kartu — nonaktif di demo",
     "placeOrder": "Buat pesanan",
+    "successEyebrow": "Terkonfirmasi",
     "successTitle": "Pesanan berhasil",
-    "successMessage": "Ini adalah checkout mock untuk demonstrasi portfolio."
+    "successMessage": "Terima kasih — ini checkout mock untuk demonstrasi portfolio.",
+    "successShop": "Lanjut belanja",
+    "successHome": "Kembali ke beranda"
   },
   "auth": {
     "loginTitle": "Masuk",
+    "subtitle": "Akses akun untuk kelola profil dan pesanan.",
     "username": "Username",
     "password": "Kata sandi",
-    "hint": "Gunakan user Fake Store API, contoh: johnd / m38rmF$"
+    "hint": "Gunakan user Fake Store API, contoh: johnd / m38rmF$",
+    "loginSuccess": "Selamat datang kembali.",
+    "loginError": "Gagal masuk. Periksa kredensial Anda."
   },
   "profile": {
-    "title": "Profil",
-    "editTitle": "Ubah profil",
+    "title": "Akun saya",
+    "eyebrow": "Akun",
+    "subtitle": "Perbarui profil dan foto — perubahan disimpan lokal di demo ini.",
+    "editTitle": "Detail pribadi",
+    "saveChanges": "Simpan perubahan",
+    "saved": "Profil disimpan.",
+    "photoUpdated": "Foto diperbarui.",
     "firstname": "Nama depan",
     "lastname": "Nama belakang",
     "email": "Email",
     "phone": "Telepon",
     "photo": "Foto profil",
-    "uploadPhoto": "Unggah foto"
+    "uploadPhoto": "Unggah foto baru"
   },
   "admin": {
     "title": "Admin",

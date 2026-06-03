@@ -1,4 +1,4 @@
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 import { LoginForm } from "@/components/features/auth/login-form";
 
 type PageProps = {
@@ -8,12 +8,10 @@ type PageProps = {
 export default async function LoginPage({ params }: PageProps) {
   const { locale } = await params;
   setRequestLocale(locale);
-  const t = await getTranslations("auth");
 
   return (
-    <section>
-      <h1 className="mb-6 text-2xl font-semibold">{t("loginTitle")}</h1>
+    <div className="flex flex-1 items-center py-8 md:py-12">
       <LoginForm />
-    </section>
+    </div>
   );
 }

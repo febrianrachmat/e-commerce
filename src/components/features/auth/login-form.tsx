@@ -12,6 +12,7 @@ import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { login } from "@/lib/api/auth";
 import { useAuthStore } from "@/stores/auth-store";
+import { siteConfig } from "@/config/site";
 
 const loginSchema = z.object({
   username: z.string().min(1),
@@ -34,36 +35,55 @@ export function LoginForm() {
     mutationFn: login,
     onSuccess: (token) => {
       setSession({ token, userId: 1 });
-      toast.success("Logged in");
+      toast.success(t("loginSuccess"));
       router.push("/profile");
     },
     onError: () => {
-      toast.error("Login failed");
+      toast.error(t("loginError"));
     },
   });
 
   return (
-    <form
-      className="max-w-sm space-y-4"
-      onSubmit={form.handleSubmit((values) => mutation.mutate(values))}
+    <section
+      aria-labelledby="login-heading"
+      className="mx-auto w-full max-w-md space-y-8"
     >
-      <p className="text-sm text-muted-foreground">{t("hint")}</p>
-      <div className="space-y-2">
-        <Label htmlFor="username">{t("username")}</Label>
-        <Input id="username" autoComplete="username" {...form.register("username")} />
+      <div className="space-y-3 text-center">
+        <p className="section-eyebrow">{siteConfig.name}</p>
+        <h1 id="login-heading" className="heading-subsection">
+          {t("loginTitle")}
+        </h1>
+        <p className="body-lead">{t("subtitle")}</p>
       </div>
-      <div className="space-y-2">
-        <Label htmlFor="password">{t("password")}</Label>
-        <Input
-          id="password"
-          type="password"
-          autoComplete="current-password"
-          {...form.register("password")}
-        />
-      </div>
-      <Button type="submit" disabled={mutation.isPending}>
-        {t("loginTitle")}
-      </Button>
-    </form>
+
+      <form
+        className="surface-panel space-y-5 p-6 md:p-8"
+        onSubmit={form.handleSubmit((values) => mutation.mutate(values))}
+      >
+        <p className="rounded-lg bg-muted/60 px-3 py-2 text-xs leading-relaxed text-muted-foreground">
+          {t("hint")}
+        </p>
+        <div className="space-y-2">
+          <Label htmlFor="username">{t("username")}</Label>
+          <Input
+            id="username"
+            autoComplete="username"
+            {...form.register("username")}
+          />
+        </div>
+        <div className="space-y-2">
+          <Label htmlFor="password">{t("password")}</Label>
+          <Input
+            id="password"
+            type="password"
+            autoComplete="current-password"
+            {...form.register("password")}
+          />
+        </div>
+        <Button type="submit" className="w-full" disabled={mutation.isPending}>
+          {t("loginTitle")}
+        </Button>
+      </form>
+    </section>
   );
 }
