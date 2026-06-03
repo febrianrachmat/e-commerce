@@ -1,6 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { ProductCard } from "@/components/features/products/product-card";
 import { QueryState } from "@/components/common/query-state";
@@ -21,8 +22,10 @@ import type { ProductFilters } from "@/types/product";
 
 export function ProductList() {
   const t = useTranslations("products");
+  const searchParams = useSearchParams();
+  const initialCategory = searchParams.get("category") ?? undefined;
   const [search, setSearch] = useState("");
-  const [category, setCategory] = useState<string | undefined>();
+  const [category, setCategory] = useState<string | undefined>(initialCategory);
   const [sort, setSort] = useState<ProductFilters["sort"]>();
 
   const filters = useMemo<ProductFilters>(

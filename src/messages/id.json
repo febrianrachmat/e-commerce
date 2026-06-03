@@ -20,7 +20,43 @@
     "login": "Masuk",
     "logout": "Keluar",
     "admin": "Admin",
-    "language": "Bahasa"
+    "language": "Bahasa",
+    "women": "Wanita",
+    "men": "Pria",
+    "jewelry": "Perhiasan",
+    "account": "Akun",
+    "openMenu": "Buka menu"
+  },
+  "announcement": {
+    "message": "Gratis ongkir untuk pesanan di atas $75"
+  },
+  "footer": {
+    "help": {
+      "title": "Bantuan",
+      "faq": "FAQ",
+      "contact": "Hubungi kami",
+      "sizeGuide": "Panduan ukuran"
+    },
+    "shopping": {
+      "title": "Belanja",
+      "delivery": "Pengiriman",
+      "returns": "Pengembalian",
+      "trackOrder": "Lacak pesanan"
+    },
+    "about": {
+      "title": "Tentang VELDT",
+      "brand": "Brand kami",
+      "sustainability": "Keberlanjutan",
+      "careers": "Karier"
+    },
+    "newsletter": {
+      "title": "Tetap terhubung",
+      "description": "Dapatkan edit editorial, produk baru, dan penawaran eksklusif.",
+      "placeholder": "Alamat email",
+      "submit": "Berlangganan",
+      "success": "Terima kasih telah berlangganan."
+    },
+    "copyright": "© {year} {brand}. Hak cipta dilindungi."
   },
   "home": {
     "title": "Toko fashion portfolio",

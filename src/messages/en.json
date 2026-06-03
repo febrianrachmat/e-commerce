@@ -20,7 +20,43 @@
     "login": "Login",
     "logout": "Logout",
     "admin": "Admin",
-    "language": "Language"
+    "language": "Language",
+    "women": "Women",
+    "men": "Men",
+    "jewelry": "Jewelry",
+    "account": "Account",
+    "openMenu": "Open menu"
+  },
+  "announcement": {
+    "message": "Complimentary shipping on orders over $75"
+  },
+  "footer": {
+    "help": {
+      "title": "Here to help",
+      "faq": "FAQs",
+      "contact": "Contact us",
+      "sizeGuide": "Size guide"
+    },
+    "shopping": {
+      "title": "Shopping with us",
+      "delivery": "Delivery",
+      "returns": "Returns",
+      "trackOrder": "Track order"
+    },
+    "about": {
+      "title": "About VELDT",
+      "brand": "The brand",
+      "sustainability": "Sustainability",
+      "careers": "Careers"
+    },
+    "newsletter": {
+      "title": "Stay connected",
+      "description": "Receive editorial edits, new arrivals, and exclusive offers.",
+      "placeholder": "Email address",
+      "submit": "Subscribe",
+      "success": "Thanks for subscribing."
+    },
+    "copyright": "© {year} {brand}. All rights reserved."
   },
   "home": {
     "title": "Fashion portfolio storefront",
