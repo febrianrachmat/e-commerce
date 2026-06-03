@@ -31,6 +31,41 @@ type HomeHeroSliderProps = {
 
 const AUTOPLAY_MS = 5000;
 
+function HeroSlideImage({
+  slide,
+  priority,
+}: {
+  slide: HeroSlide;
+  priority?: boolean;
+}) {
+  return (
+    <>
+      <Image
+        src={slide.image}
+        alt=""
+        fill
+        aria-hidden
+        priority={priority}
+        className="scale-110 object-cover object-center opacity-40 blur-3xl saturate-125"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 bg-foreground/55" />
+      <div className="absolute inset-x-4 top-28 bottom-[46%] sm:inset-x-8 sm:bottom-[44%] md:inset-y-12 md:right-6 md:left-auto md:w-[min(46vw,34rem)] md:max-w-none lg:inset-y-16 lg:right-10 lg:w-[min(44vw,38rem)]">
+        <div className="relative h-full w-full">
+          <Image
+            src={slide.image}
+            alt={slide.title}
+            fill
+            priority={priority}
+            className="object-contain object-center drop-shadow-[0_28px_56px_rgba(0,0,0,0.38)] md:object-right"
+            sizes="(max-width: 768px) 90vw, 44vw"
+          />
+        </div>
+      </div>
+    </>
+  );
+}
+
 export function HomeHeroSlider({
   slides,
   eyebrow,
@@ -88,24 +123,21 @@ export function HomeHeroSlider({
         <AnimatePresence mode="wait" initial={false}>
           <motion.div
             key={activeSlide.productId}
-            initial={{ opacity: 0, scale: 1.04 }}
-            animate={{ opacity: 1, scale: 1 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
             className="absolute inset-0"
           >
-            <Image
-              src={activeSlide.image}
-              alt={activeSlide.title}
-              fill
+            <HeroSlideImage
+              slide={activeSlide}
               priority={activeIndex === 0}
-              className="object-cover object-center opacity-52"
-              sizes="100vw"
             />
           </motion.div>
         </AnimatePresence>
 
-        <div className="absolute inset-0 bg-gradient-to-r from-foreground/90 via-foreground/58 to-foreground/22" />
+        <div className="absolute inset-0 bg-gradient-to-r from-foreground/95 via-foreground/72 to-foreground/10" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_78%_50%,transparent_0%,rgba(0,0,0,0.22)_100%)]" />
 
         {total > 1 ? (
           <>
