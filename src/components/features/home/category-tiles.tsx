@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { getTranslations } from "next-intl/server";
-import { Link } from "@/i18n/navigation";
+import { FullBleed } from "@/components/layout/full-bleed";
 import { MotionReveal } from "@/components/common/motion-reveal";
+import { CategoryTilesShowcase } from "@/components/features/home/category-tiles-showcase";
 
 export type CategoryTile = {
   label: string;
@@ -16,43 +16,37 @@ type CategoryTilesProps = {
 export async function CategoryTiles({ tiles }: CategoryTilesProps) {
   const t = await getTranslations("home");
 
-  return (
-    <section aria-labelledby="categories-heading" className="space-y-8">
-      <MotionReveal>
-        <div className="space-y-2">
-          <p className="section-eyebrow">{t("categoriesEyebrow")}</p>
-          <h2 id="categories-heading" className="heading-section">
-            {t("categoriesTitle")}
-          </h2>
-        </div>
-      </MotionReveal>
+  if (tiles.length === 0) return null;
 
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-        {tiles.map((tile, index) => (
-          <MotionReveal key={tile.href} delay={index * 0.08}>
-            <Link
-              href={tile.href}
-              className="group relative block aspect-[4/5] overflow-hidden rounded-lg bg-muted"
-            >
-              <Image
-                src={tile.image}
-                alt={tile.label}
-                fill
-                className="object-cover object-center transition-transform duration-700 group-hover:scale-[1.04]"
-                sizes="(max-width: 768px) 100vw, 33vw"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/15 to-transparent" />
-              <div className="absolute inset-x-0 bottom-0 p-6">
-                <p className="font-heading text-3xl font-light tracking-wide text-background md:text-4xl">
-                  {tile.label}
-                </p>
-                <p className="mt-2 text-xs tracking-[0.18em] uppercase text-background/75 transition-colors group-hover:text-background">
-                  {t("shopCategory")}
-                </p>
-              </div>
-            </Link>
-          </MotionReveal>
-        ))}
+  return (
+    <section aria-labelledby="categories-heading" className="relative">
+      <FullBleed className="pointer-events-none absolute -top-6 -z-10 select-none overflow-hidden">
+        <p
+          aria-hidden
+          className="font-display text-[clamp(4rem,18vw,13rem)] font-bold uppercase leading-[0.85] tracking-[-0.04em] text-foreground/[0.035]"
+        >
+          {t("categoriesEyebrow")}
+        </p>
+      </FullBleed>
+
+      <div className="space-y-8 md:space-y-10">
+        <MotionReveal>
+          <div className="grid gap-6 md:grid-cols-[1fr_auto] md:items-end">
+            <div className="space-y-3">
+              <p className="section-eyebrow">{t("categoriesEyebrow")}</p>
+              <h2 id="categories-heading" className="heading-section max-w-md">
+                {t("categoriesTitle")}
+              </h2>
+            </div>
+            <p className="body-editorial max-w-xs border-l border-border/80 pl-5 text-sm md:text-base">
+              {t("categoriesSubtitle")}
+            </p>
+          </div>
+        </MotionReveal>
+
+        <MotionReveal delay={0.1}>
+          <CategoryTilesShowcase tiles={tiles} shopLabel={t("shopCategory")} />
+        </MotionReveal>
       </div>
     </section>
   );
