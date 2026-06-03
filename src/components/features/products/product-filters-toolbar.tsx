@@ -53,13 +53,13 @@ export function ProductFiltersToolbar({
               placeholder={searchPlaceholder}
               value={search}
               onChange={(event) => onSearchChange(event.target.value)}
-              className="h-10 border-border/70 bg-muted/35 pl-10 dark:bg-muted/25"
+              className="h-11 border-border/70 bg-muted/35 pl-10 text-base dark:bg-muted/25"
             />
           </div>
 
           <div className="flex items-center gap-3 sm:shrink-0">
             {resultCountLabel ? (
-              <p className="hidden text-xs font-medium tracking-wide text-muted-foreground sm:block">
+              <p className="hidden text-sm font-medium tracking-wide text-muted-foreground sm:block">
                 {resultCountLabel}
               </p>
             ) : null}

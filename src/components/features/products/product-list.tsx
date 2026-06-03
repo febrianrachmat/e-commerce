@@ -4,7 +4,9 @@ import { useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import { useTranslations } from "next-intl";
 import { useRouter } from "@/i18n/navigation";
-import { ProductCard } from "@/components/features/products/product-card";
+import { ProductGrid } from "@/components/features/products/product-grid";
+import { FullBleed } from "@/components/layout/full-bleed";
+import { MotionReveal } from "@/components/common/motion-reveal";
 import { ProductFiltersToolbar } from "@/components/features/products/product-filters-toolbar";
 import { QueryState } from "@/components/common/query-state";
 import {
@@ -65,14 +67,25 @@ export function ProductList() {
   const resultCount = productsQuery.data?.length ?? 0;
 
   return (
-    <section aria-labelledby="products-heading" className="space-y-8">
-      <div className="space-y-3">
+    <section aria-labelledby="products-heading" className="relative space-y-8 md:space-y-10">
+      <FullBleed className="pointer-events-none absolute -top-4 -z-10 select-none overflow-hidden">
+        <p
+          aria-hidden
+          className="font-display text-[clamp(3.5rem,16vw,11rem)] font-bold uppercase leading-[0.88] tracking-[-0.04em] text-foreground/[0.03]"
+        >
+          {t("shopEyebrow")}
+        </p>
+      </FullBleed>
+
+      <MotionReveal className="space-y-4 md:space-y-5">
         <p className="section-eyebrow">{t("shopEyebrow")}</p>
-        <h1 id="products-heading" className="heading-section">
+        <h1 id="products-heading" className="heading-section max-w-3xl">
           {t("title")}
         </h1>
-        <p className="body-lead max-w-2xl">{t("shopSubtitle")}</p>
-      </div>
+        <p className="body-lead max-w-2xl text-base md:text-lg md:leading-relaxed">
+          {t("shopSubtitle")}
+        </p>
+      </MotionReveal>
 
       <ProductFiltersToolbar
         search={search}
@@ -118,13 +131,9 @@ export function ProductList() {
         isEmpty={resultCount === 0}
         onRetry={() => productsQuery.refetch()}
       >
-        <ul className="grid gap-x-4 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-          {productsQuery.data?.map((product) => (
-            <li key={product.id}>
-              <ProductCard product={product} />
-            </li>
-          ))}
-        </ul>
+        {productsQuery.data ? (
+          <ProductGrid products={productsQuery.data} />
+        ) : null}
       </QueryState>
     </section>
   );

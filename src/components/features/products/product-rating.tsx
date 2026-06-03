@@ -5,10 +5,28 @@ type ProductRatingProps = {
   rate: number;
   count: number;
   className?: string;
+  size?: "sm" | "md";
 };
 
-export function ProductRating({ rate, count, className }: ProductRatingProps) {
+const sizeStyles = {
+  sm: {
+    star: "size-3.5",
+    text: "text-xs md:text-sm",
+  },
+  md: {
+    star: "size-4",
+    text: "text-sm md:text-base",
+  },
+} as const;
+
+export function ProductRating({
+  rate,
+  count,
+  className,
+  size = "sm",
+}: ProductRatingProps) {
   const rounded = Math.round(rate);
+  const styles = sizeStyles[size];
 
   return (
     <div className={cn("flex items-center gap-2", className)}>
@@ -17,7 +35,7 @@ export function ProductRating({ rate, count, className }: ProductRatingProps) {
           <Star
             key={index}
             className={cn(
-              "size-3.5",
+              styles.star,
               index < rounded
                 ? "fill-brand text-brand"
                 : "text-muted-foreground/35",
@@ -25,7 +43,7 @@ export function ProductRating({ rate, count, className }: ProductRatingProps) {
           />
         ))}
       </div>
-      <span className="text-sm text-muted-foreground">
+      <span className={cn("tabular-nums text-muted-foreground", styles.text)}>
         {rate.toFixed(1)} ({count})
       </span>
     </div>

@@ -16,10 +16,13 @@ function ProductListFallback() {
         <Skeleton className="h-10" />
         <Skeleton className="h-10" />
       </div>
-      <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-        {Array.from({ length: 8 }).map((_, i) => (
-          <Skeleton key={i} className="aspect-[3/4] w-full rounded-lg" />
-        ))}
+      <div className="grid grid-cols-2 gap-4 lg:grid-cols-12 lg:gap-5">
+        <Skeleton className="col-span-2 aspect-[4/5] rounded-2xl lg:col-span-7 lg:row-span-2 lg:aspect-auto lg:min-h-[22rem]" />
+        <Skeleton className="aspect-[4/5] rounded-2xl lg:col-span-5 lg:min-h-[14rem]" />
+        <Skeleton className="aspect-[4/5] rounded-2xl lg:col-span-5 lg:min-h-[14rem]" />
+        <Skeleton className="col-span-2 aspect-[3/4] rounded-2xl lg:col-span-4" />
+        <Skeleton className="aspect-[4/5] rounded-2xl lg:col-span-4" />
+        <Skeleton className="aspect-[4/5] rounded-2xl lg:col-span-4" />
       </div>
     </div>
   );
