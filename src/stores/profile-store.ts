@@ -18,6 +18,6 @@ export const useProfileStore = create<ProfileStore>()(
         })),
       clearOverrides: () => set({ overrides: {} }),
     }),
-    { name: "luxe-thread-profile" },
+    { name: "veldt-profile" },
   ),
 );

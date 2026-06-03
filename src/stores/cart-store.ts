@@ -81,6 +81,6 @@ export const useCartStore = create<CartStore>()(
           0,
         ),
     }),
-    { name: "luxe-thread-cart" },
+    { name: "veldt-cart" },
   ),
 );

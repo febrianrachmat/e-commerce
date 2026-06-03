@@ -1,7 +1,7 @@
 import type { AdminProduct, AdminProductInput } from "@/types/admin";
 import type { Product } from "@/types/product";
 
-const STORAGE_KEY = "luxe-thread-admin-products";
+const STORAGE_KEY = "veldt-admin-products";
 
 function readStore(): AdminProduct[] {
   if (typeof window === "undefined") return [];

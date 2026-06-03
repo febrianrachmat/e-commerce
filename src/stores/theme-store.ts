@@ -14,6 +14,6 @@ export const useThemeStore = create<ThemeStore>()(
       theme: "system",
       setTheme: (theme) => set({ theme }),
     }),
-    { name: "luxe-thread-theme" },
+    { name: "veldt-theme" },
   ),
 );

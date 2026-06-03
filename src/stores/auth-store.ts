@@ -17,6 +17,6 @@ export const useAuthStore = create<AuthStore>()(
       logout: () => set({ session: null }),
       isAuthenticated: () => get().session !== null,
     }),
-    { name: "luxe-thread-auth" },
+    { name: "veldt-auth" },
   ),
 );
