@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-import { ProductDetailClient } from "@/components/features/products/product-detail-client";
+import { ProductDetailView } from "@/components/features/products/product-detail-view";
 import { getProductById } from "@/lib/api/products";
+import { LinkButton } from "@/components/ui/link-button";
 
 type PageProps = {
   params: Promise<{ locale: string; id: string }>;
@@ -14,32 +14,27 @@ export default async function ProductDetailPage({ params }: PageProps) {
   const productId = Number(id);
 
   if (!Number.isFinite(productId)) {
-    return <p>{t("notFound")}</p>;
+    return (
+      <section className="space-y-4 py-16 text-center">
+        <p role="alert">{t("notFound")}</p>
+        <LinkButton href="/products" variant="outline">
+          {t("backToShop")}
+        </LinkButton>
+      </section>
+    );
   }
 
   try {
     const product = await getProductById(productId);
-    return (
-      <article className="grid gap-8 md:grid-cols-2">
-        <div className="relative aspect-square bg-muted">
-          <Image
-            src={product.image}
-            alt={product.title}
-            fill
-            className="object-contain p-4"
-            priority
-            sizes="(max-width: 768px) 100vw, 50vw"
-          />
-        </div>
-        <div className="space-y-4">
-          <h1 className="text-2xl font-semibold">{product.title}</h1>
-          <p className="text-xl">${product.price.toFixed(2)}</p>
-          <p className="text-muted-foreground">{product.description}</p>
-          <ProductDetailClient product={product} />
-        </div>
-      </article>
-    );
+    return <ProductDetailView product={product} />;
   } catch {
-    return <p role="alert">{t("notFound")}</p>;
+    return (
+      <section className="space-y-4 py-16 text-center">
+        <p role="alert">{t("notFound")}</p>
+        <LinkButton href="/products" variant="outline">
+          {t("backToShop")}
+        </LinkButton>
+      </section>
+    );
   }
 }
