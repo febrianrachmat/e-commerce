@@ -27,35 +27,54 @@ function buildUrl(path: string, params?: RequestOptions["params"]) {
   return url.toString();
 }
 
+const DEFAULT_RETRIES = 3;
+
+async function sleep(ms: number) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
 export async function apiClient<T>(
   path: string,
   options: RequestOptions = {},
 ): Promise<T> {
   const { params, headers, ...init } = options;
   const url = buildUrl(path, params);
+  let lastError: unknown;
 
-  const response = await fetch(url, {
-    ...init,
-    headers: {
-      "Content-Type": "application/json",
-      ...headers,
-    },
-    next: { revalidate: 300, ...init.next },
-  });
-
-  if (!response.ok) {
-    let body: unknown;
+  for (let attempt = 0; attempt < DEFAULT_RETRIES; attempt++) {
     try {
-      body = await response.json();
-    } catch {
-      body = undefined;
+      const response = await fetch(url, {
+        ...init,
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+          ...headers,
+        },
+        next: { revalidate: 300, ...init.next },
+      });
+
+      if (!response.ok) {
+        let body: unknown;
+        try {
+          body = await response.json();
+        } catch {
+          body = undefined;
+        }
+        throw new ApiError(
+          `API request failed: ${response.status} ${response.statusText}`,
+          response.status,
+          body,
+        );
+      }
+
+      return response.json() as Promise<T>;
+    } catch (error) {
+      lastError = error;
+      if (attempt < DEFAULT_RETRIES - 1) {
+        await sleep(250 * 2 ** attempt);
+      }
     }
-    throw new ApiError(
-      `API request failed: ${response.status} ${response.statusText}`,
-      response.status,
-      body,
-    );
   }
 
-  return response.json() as Promise<T>;
+  throw lastError;
 }

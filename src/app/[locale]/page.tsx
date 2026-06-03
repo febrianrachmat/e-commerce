@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from "next/cache";
 import { setRequestLocale, getTranslations } from "next-intl/server";
 import { siteConfig } from "@/config/site";
 import {
@@ -23,27 +24,30 @@ const categoryNavKeys = {
   jewelery: "jewelry",
 } as const;
 
+/** Always fetch catalog at request time — build-time fetch can fail on Vercel. */
+export const dynamic = "force-dynamic";
+
 export default async function HomePage({ params }: PageProps) {
+  noStore();
   const { locale } = await params;
   setRequestLocale(locale);
   const tNav = await getTranslations("nav");
 
-  let featuredProducts: Awaited<ReturnType<typeof getProducts>> = [];
-  let womenProducts: Awaited<ReturnType<typeof getProductsByCategory>> = [];
-  let menProducts: Awaited<ReturnType<typeof getProductsByCategory>> = [];
-  let jewelryProducts: Awaited<ReturnType<typeof getProductsByCategory>> = [];
+  const catalogResults = await Promise.allSettled([
+    getProducts({ sort: "rating", limit: 4 }),
+    getProductsByCategory("women's clothing"),
+    getProductsByCategory("men's clothing"),
+    getProductsByCategory("jewelery"),
+  ]);
 
-  try {
-    [featuredProducts, womenProducts, menProducts, jewelryProducts] =
-      await Promise.all([
-        getProducts({ sort: "rating", limit: 4 }),
-        getProductsByCategory("women's clothing"),
-        getProductsByCategory("men's clothing"),
-        getProductsByCategory("jewelery"),
-      ]);
-  } catch {
-    // Allow build/deploy when Fake Store API is unreachable during SSG.
-  }
+  const featuredProducts =
+    catalogResults[0].status === "fulfilled" ? catalogResults[0].value : [];
+  const womenProducts =
+    catalogResults[1].status === "fulfilled" ? catalogResults[1].value : [];
+  const menProducts =
+    catalogResults[2].status === "fulfilled" ? catalogResults[2].value : [];
+  const jewelryProducts =
+    catalogResults[3].status === "fulfilled" ? catalogResults[3].value : [];
 
   const heroSlides = pickHeroSlides([
     womenProducts[0],
