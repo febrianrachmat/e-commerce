@@ -43,7 +43,7 @@ export async function CategoryTiles({ tiles }: CategoryTilesProps) {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-foreground/75 via-foreground/15 to-transparent" />
               <div className="absolute inset-x-0 bottom-0 p-6">
-                <p className="font-heading text-2xl tracking-wide text-background md:text-3xl">
+                <p className="font-heading text-3xl font-light tracking-wide text-background md:text-4xl">
                   {tile.label}
                 </p>
                 <p className="mt-2 text-xs tracking-[0.18em] uppercase text-background/75 transition-colors group-hover:text-background">

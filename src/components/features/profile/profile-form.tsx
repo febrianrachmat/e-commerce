@@ -100,7 +100,7 @@ export function ProfileForm() {
                 </AvatarFallback>
               </Avatar>
               <div className="space-y-1">
-                <p className="font-heading text-xl">{profile.displayName}</p>
+                <p className="font-heading text-2xl font-light">{profile.displayName}</p>
                 <p className="text-sm text-muted-foreground">{profile.email}</p>
               </div>
               <Separator className="w-full" />

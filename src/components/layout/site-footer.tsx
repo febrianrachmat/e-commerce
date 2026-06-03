@@ -60,7 +60,7 @@ export async function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-border/80 pt-8 sm:flex-row sm:items-center sm:justify-between">
-          <p className="font-heading text-lg tracking-[0.16em] uppercase">
+          <p className="brand-wordmark text-base md:text-lg">
             {siteConfig.name}
           </p>
           <p className="text-sm text-muted-foreground">

@@ -153,7 +153,7 @@ export function SiteHeader() {
               </SheetTrigger>
               <SheetContent side="left" className="w-full max-w-xs gap-0 p-0">
                 <SheetHeader className="border-b px-6 py-5">
-                  <SheetTitle className="font-heading text-xl tracking-[0.18em] uppercase">
+                  <SheetTitle className="brand-wordmark text-xl">
                     {tCommon("brand")}
                   </SheetTitle>
                 </SheetHeader>
@@ -234,7 +234,7 @@ export function SiteHeader() {
 
           <Link
             href="/"
-            className="justify-self-center font-heading text-xl tracking-[0.22em] uppercase lg:text-2xl"
+            className="brand-wordmark justify-self-center text-lg lg:text-xl"
           >
             {tCommon("brand")}
           </Link>

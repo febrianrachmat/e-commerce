@@ -20,7 +20,7 @@ export async function EditorialBanner({ product }: EditorialBannerProps) {
             <div className="mx-auto max-w-md space-y-5 lg:mx-0">
               <p className="section-eyebrow">{t("editorialEyebrow")}</p>
               <h2 className="heading-section">{t("editorialTitle")}</h2>
-              <p className="body-lead">{t("editorialBody")}</p>
+              <p className="body-lead text-foreground/85">{t("editorialBody")}</p>
               <LinkButton href="/products">{t("editorialCta")}</LinkButton>
             </div>
           </MotionReveal>

@@ -52,7 +52,7 @@ export async function ProductDetailView({ product }: ProductDetailViewProps) {
               ${product.price.toFixed(2)}
             </p>
 
-            <p className="body-lead text-foreground/80">{product.description}</p>
+            <p className="body-lead text-foreground/85">{product.description}</p>
 
             <Separator />
 

@@ -59,7 +59,7 @@ export function ProductCard({ product, className }: ProductCardProps) {
         <p className="section-eyebrow normal-case tracking-[0.16em]">
           {categoryLabel}
         </p>
-        <h3 className="line-clamp-2 text-sm leading-snug">
+        <h3 className="line-clamp-2 text-sm leading-snug font-medium">
           <Link
             href={`/products/${product.id}`}
             className="transition-colors hover:text-brand"
